@@ -19,14 +19,14 @@ int main(int argc, char const *argv[])
 		std::cout<<"	./mergesort --console (number 0) (number 1) (number2)...(number n) will read number from stdin and output result to stdout"<<std::endl;
 		std::cout<<"	./mergesort --file (file 0) (file 1) will read numbers from file 0 and print the sort result to file 1"<<std::endl;
 	}
-	
+
 	else if(strlen(argv[1]) == 9 && strncmp(argv[1], "--console", 9) == 0){
 		std::vector<int> data;
 		for(size_t i = 2; argv[i]; i++){
 			data.push_back(atoi(argv[i]));
 		}
 		std::vector<int> sorted = merge_sort(data);
-		
+
 		for(size_t i = 0; i < sorted.size(); i++){
 			std::cout<<sorted[i]<<" ";
 		}
@@ -63,6 +63,7 @@ int main(int argc, char const *argv[])
 		std::cout<<"Use ./mergesort --help for usage"<<std::endl;
 		return 0;
 	}
-	
+
+
 	return 0;
 }
